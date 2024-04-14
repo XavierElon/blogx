@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint", 
+    "outdated": "yarn upgrade-interactive"
   },
   "dependencies": {
     "eslint": "8.48.0",
