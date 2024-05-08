@@ -6,14 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint", 
+    "lint": "next lint",
     "outdated": "yarn upgrade-interactive"
   },
   "dependencies": {
-    "eslint": "8.48.0",
-    "eslint-config-next": "13.4.19",
-    "next": "13.4.19",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "eslint": "9.1.1",
+    "eslint-config-next": "14.2.3",
+    "next": "14.2.3",
+    "react": "18.3.0",
+    "react-dom": "18.3.0"
   }
 }
