@@ -1,3 +1,17 @@
 .container {
     flex: 2;
+    margin-top: 60px;
+    
 }
+
+.subtitle {
+    color: gray;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.title {
+    font-size: 28px;
+}
+
