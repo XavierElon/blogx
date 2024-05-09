@@ -1,6 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
 import styles from './menu.module.css'
 import MenuPosts from '../menuPosts/menuPosts'
 import MenuCategories from '../menuCategories/menuCategories'
