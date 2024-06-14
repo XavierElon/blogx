@@ -9,7 +9,7 @@ const SinglePage = () => {
     <div className={styles.container}>
       <div className={styles.infoContainer}>
         <div className={styles.textContainer}>
-          <h1 className={styles.title}>Red Head Girl</h1>
+          <h1 className={styles.title}>Michelle, my Princess is the Best Creation in the World</h1>
           <div className={styles.user}>
             {/* {data?.user?.image && ( */}
             <div className={styles.userImageContainer}>

@@ -14,14 +14,9 @@ const Card = () => {
           <span className={styles.category}>Tech</span>
         </div>
         <Link href="/">
-          <h1>Redhead Girl</h1>
+          <h1>Michelle my Princess is the Best Creation in the World</h1>
         </Link>
-        <p className={styles.desc}>
-          Sint excepteur adipisicing eu sit esse id ad Lorem deserunt ea cillum tempor nisi. Ex ea ut commodo aliqua
-          ipsum ex Lorem in cillum non id et aliqua. Proident consequat dolore nisi irure id deserunt excepteur aliqua
-          nulla duis magna proident duis. Nisi aliqua anim ipsum tempor consequat deserunt aliquip ea labore est culpa
-          non dolor aute.
-        </p>
+        <p className={styles.desc}>Sint excepteur adipisicing eu sit esse id ad Lorem deserunt ea cillum tempor nisi. Ex ea ut commodo aliqua ipsum ex Lorem in cillum non id et aliqua. Proident consequat dolore nisi irure id deserunt excepteur aliqua nulla duis magna proident duis. Nisi aliqua anim ipsum tempor consequat deserunt aliquip ea labore est culpa non dolor aute.</p>
         <Link href="/" className={styles.link}>
           Read More
         </Link>
