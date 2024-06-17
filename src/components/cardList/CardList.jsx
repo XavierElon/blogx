@@ -5,9 +5,10 @@ import Image from 'next/image'
 import Card from '../card/Card'
 
 const getData = async (page) => {
-  const res = await fetch(`http://localhost:3000/api/posts`, {
+  const res = await fetch(`http://localhost:3000/api/posts?page=${page}`, {
     cache: 'no-store'
   })
+  console.log(res)
 
   if (!res.ok) {
     throw new Error('Failed')
@@ -17,14 +18,14 @@ const getData = async (page) => {
 }
 
 const CardList = async ({ page }) => {
-  const posts = await getData(page)
+  const { posts, count } = await getData(page)
   console.log('here:')
   console.log(posts)
 
   const POST_PER_PAGE = 2
 
   const hasPrev = POST_PER_PAGE * (page - 1) > 0
-  const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE
+  const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count
 
   return (
     <div className={styles.container}>

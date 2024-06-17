@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server'
 export const GET = async (req) => {
   const { searchParams } = new URL(req.url)
 
-  const page = searchParams.get('page')
+  const page = parseInt(searchParams.get('page') || '1', 10) // Default to 1 if page is not provided
 
   const POST_PER_PAGE = 2
 
@@ -14,13 +14,13 @@ export const GET = async (req) => {
   }
 
   try {
-    const posts = await prisma.post.findMany()
+    const [posts, count] = await prisma.$transaction([prisma.post.findMany(query), prisma.post.count()])
     console.log('posts')
     console.log(posts)
 
-    return new NextResponse(JSON.stringify(posts), { status: 200 })
+    return NextResponse.json({ posts, count }, { status: 200 })
   } catch (err) {
     console.error(err)
-    return new NextResponse(JSON.stringify({ message: 'Something went wrong' }, { status: 500 }))
+    return NextResponse.json({ message: 'Something went wrong' }, { status: 500 })
   }
 }
