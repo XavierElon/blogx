@@ -8,11 +8,15 @@ export const GET = async (req) => {
 
   const POST_PER_PAGE = 2
 
+  const query = {
+    take: POST_PER_PAGE,
+    skip: POST_PER_PAGE * (page - 1)
+  }
+
   try {
-    const posts = await prisma.category.findMany({
-      take: POST_PER_PAGE,
-      skip: POST_PER_PAGE * (page - 1)
-    })
+    const posts = await prisma.post.findMany()
+    console.log('posts')
+    console.log(posts)
 
     return new NextResponse(JSON.stringify(posts), { status: 200 })
   } catch (err) {

@@ -10,9 +10,9 @@ const Pagination = ({ page, hasPrev, hasNext }) => {
   return (
     <div className={styles.container}>
       <button className={styles.button} disabled={!hasPrev} onClick={() => router.push(`?page=${page - 1}`)}>
-        Prev
+        Previous
       </button>
-      <button className={styles.button} diabled={!hasNext} onClick={() => router.push(`?page=${page + 1}`)}>
+      <button disabled={!hasNext} className={styles.button} onClick={() => router.push(`?page=${page + 1}`)}>
         Next
       </button>
     </div>
