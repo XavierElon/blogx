@@ -8,7 +8,6 @@ const getData = async (page, cat) => {
   const res = await fetch(`http://localhost:3000/api/posts?page=${page}&cat=${cat || ''}`, {
     cache: 'no-store'
   })
-  console.log(res)
 
   if (!res.ok) {
     throw new Error('Failed')
@@ -19,8 +18,6 @@ const getData = async (page, cat) => {
 
 const CardList = async ({ page, cat }) => {
   const { posts, count } = await getData(page, cat)
-  console.log('here:')
-  console.log(posts)
 
   const POST_PER_PAGE = 2
 

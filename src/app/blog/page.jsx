@@ -5,9 +5,7 @@ import Menu from '@/components/menu/Menu'
 
 const BlogPage = ({ searchParams }) => {
   const page = parseInt(searchParams.page) || 1
-  console.log('here')
   const { cat } = searchParams
-  console.log(cat)
 
   return (
     <div className={styles.container}>
