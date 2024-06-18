@@ -1,5 +1,5 @@
 .container {
-
+    perspective: 1000px;
 }
 
 .title {
@@ -24,28 +24,63 @@
     border-radius: 10px;
 }
 
+.container {
+    perspective: 1000px;
+}
+
+.category {
+    position: relative;
+    overflow: hidden; /* Ensure the shine effect does not overflow */
+    transition: all 0.3s ease;
+    transform-style: preserve-3d; /* Ensure 3D transforms are preserved */
+    background-size: 200% 200%;
+}
+
 .category.style {
-    background-color: #57c4ff31;
+    background: linear-gradient(to right, #57c4ff31, white);
 }
 
 .category.fashion {
-    background-color: #da85c731;
+    background: linear-gradient(to right, #da85c731, white);
 }
 
 .category.food {
-    background-color: #7fb88133;
+    background: linear-gradient(to right, #7fb88133, white);
 }
 
 .category.travel {
-    background-color: #ff795736;
+    background: linear-gradient(to right, #ff795736, white);
 }
 
 .category.culture {
-    background-color: #ffb04f45;
+    background: linear-gradient(to right, #ffb04f45, white);
 }
 
 .category.coding {
-    background-color: #5e4fff31;
+    background: linear-gradient(to right, #5e4fff31, white);
+}
+
+.category:hover {
+    transform: translate3d(5px, -5px, 20px); /* Move diagonally and in z-direction */
+}
+
+.category::before {
+    content: '';
+    position: absolute;
+    top: -100%; /* Start above the element */
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+    pointer-events: none; /* Prevent interaction with the pseudo-element */
+}
+
+.category:hover::before {
+    top: 100%;
+    left: 100%;
+    transition: all 0.3s ease; /* Move the shine effect */
 }
 
 .image {

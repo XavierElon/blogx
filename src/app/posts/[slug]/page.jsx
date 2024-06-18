@@ -1,24 +1,24 @@
-import Menu from "@/components/Menu/Menu";
-import styles from "./singlePage.module.css";
-import Image from "next/image";
-import Comments from "@/components/comments/Comments";
+import Menu from '@/components/menu/Menu'
+import styles from './singlePage.module.css'
+import Image from 'next/image'
+import Comments from '@/components/comments/Comments'
 
 const getData = async (slug) => {
   const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
-    cache: "no-store",
-  });
+    cache: 'no-store'
+  })
 
   if (!res.ok) {
-    throw new Error("Failed");
+    throw new Error('Failed')
   }
 
-  return res.json();
-};
+  return res.json()
+}
 
 const SinglePage = async ({ params }) => {
-  const { slug } = params;
+  const { slug } = params
 
-  const data = await getData(slug);
+  const data = await getData(slug)
   console.log(data)
 
   return (
@@ -46,18 +46,15 @@ const SinglePage = async ({ params }) => {
       </div>
       <div className={styles.content}>
         <div className={styles.post}>
-          <div
-            className={styles.description}
-            dangerouslySetInnerHTML={{ __html: data?.desc }}
-          />
+          <div className={styles.description} dangerouslySetInnerHTML={{ __html: data?.desc }} />
           <div className={styles.comment}>
-            <Comments postSlug={slug}/>
+            <Comments postSlug={slug} />
           </div>
         </div>
         <Menu />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SinglePage;
+export default SinglePage
