@@ -24,8 +24,6 @@ const Comments = ({ postSlug }) => {
   const { status } = useSession()
 
   const { data, mutate, isLoading } = useSWR(`http://localhost:3000/api/comments?postSlug=${postSlug}`, fetcher)
-  console.log('comments')
-  console.log(data)
 
   const [desc, setDesc] = useState('')
 
@@ -34,6 +32,8 @@ const Comments = ({ postSlug }) => {
       method: 'POST',
       body: JSON.stringify({ desc, postSlug })
     })
+    setDesc('')
+
     mutate()
   }
 
@@ -42,7 +42,7 @@ const Comments = ({ postSlug }) => {
       <h1 className={styles.title}>Comments</h1>
       {status === 'authenticated' ? (
         <div className={styles.write}>
-          <textarea placeholder="write a comment..." className={styles.input} onChange={(e) => setDesc(e.target.value)} />
+          <textarea placeholder="write a comment..." className={styles.input} value={desc} onChange={(e) => setDesc(e.target.value)} />
           <button className={styles.button} onClick={handleSubmit}>
             Send
           </button>
