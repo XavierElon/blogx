@@ -6,7 +6,7 @@ const Featured = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
-        <b className={styles.bold}>Red Head Girl</b>
+        <b className={styles.bold}>Michelle is Beautiful</b>
       </h1>
       <div className={styles.post}>
         <div className={styles.imgContainer}>
